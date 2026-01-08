@@ -53,7 +53,7 @@ const App = () => {
     const loadData = async () => {
         setIsComputing(true);
         try {
-            const { data: localData, attributes: localAttrs } = await fetchLocalData('services/data/male_players.csv');
+            const { data: localData, attributes: localAttrs } = await fetchLocalData(`${import.meta.env.BASE_URL}data/male_players.csv`);
             if (localData && localData.length > 0) {
                 setFullData(localData);
                 setAttributes(localAttrs);
